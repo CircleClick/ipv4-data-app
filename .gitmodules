@@ -1,0 +1,3 @@
+[submodule "ipv4-data-server"]
+	path = ipv4-data-server
+	url = https://github.com/CircleClick/ipv4-data-server
