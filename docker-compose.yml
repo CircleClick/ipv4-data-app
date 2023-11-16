@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ipv4-data-server:
+    build: ./ipv4-data-server
+    ports:
+      - "3001:3000"
+  ipv4-data-explorer:
+    build: ./ipv4-data-explorer
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ipv4-data-server
