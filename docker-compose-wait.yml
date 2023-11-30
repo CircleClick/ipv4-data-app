@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  wait-for-server:
+    image: alpine:latest
+    depends_on:
+      - ipv4-data-server
+    command: /bin/sh -c "/usr/src/app/wait-for-mongo.sh"

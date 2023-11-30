@@ -6,12 +6,11 @@ services:
       context: ./ipv4-data-server
       dockerfile: Dockerfile
       ssh:
-        - default  # Corrected SSH mapping
+        - default
     ports:
       - "8080:8080"
     environment:
       - DB_URL=mongodb+srv://hilbertDB:OnDRsURqwU2x3N1R@cluster0.nkx7yi1.mongodb.net/hilbertDB
-   
 
   ipv4-data-explorer:
     build:
@@ -22,6 +21,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - API_URL=http://ipv4-data-server:8080
+      - NEXT_PUBLIC_API_URL=http://ipv4-data-server:8080
     depends_on:
       - ipv4-data-server
+
